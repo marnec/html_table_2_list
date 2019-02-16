@@ -34,13 +34,17 @@ Python 3+ (I didn't test it on Python2)
 </table>
 
 ```python
-from html2list import html2list, repr_table
-from examples import *
-print(html2list(example1))
+>>>from html2list import html2list, repr_table
+>>>from examples import *
+>>>from pprint import pprint
+>>>pprint(html2list(example1))
 
-[['65', '65', '40', '40', '20', '20'], ['Men', 'Women', 'Men', 'Women', 'Men', 'Women'], ['82', '85', '78', '82', '77', '81']]
+('',
+ [['65', '65', '40', '40', '20', '20'],
+  ['Men', 'Women', 'Men', 'Women', 'Men', 'Women'],
+  ['82', '85', '78', '82', '77', '81']])
 
-print(repr_table(*html2list(example1)))
+>>>print(repr_table(*html2list(example1)))
                                     
 65   65     40   40     20   20   
 Men  Women  Men  Women  Men  Women
@@ -91,13 +95,21 @@ Men  Women  Men  Women  Men  Women
 </table>
 
 ```python
-from html2list import html2list, repr_table
-from examples import *
-print(html2list(example2))
+>>>from html2list import html2list, repr_table
+>>>from examples import *
+>>>from pprint import pprint 
+>>>pprint(html2list(example2))
 
-'Invoice', [['Item / Desc.', 'Qty.', '@', 'Price'], ['Paperclips (Box)', '100', '1.15', '115.00'], ['Paper (Case)', '10', '45.99', '459.90'], ['Wastepaper Baskets', '2', '17.99', '35.98'], ['Subtotal', 'Subtotal', 'Subtotal', '610.88'], ['Tax', 'Tax', '7%', '42.76'], ['Total', 'Total', 'Total', '653.64']]
+('Invoice',
+ [['Item / Desc.', 'Qty.', '@', 'Price'],
+  ['Paperclips (Box)', '100', '1.15', '115.00'],
+  ['Paper (Case)', '10', '45.99', '459.90'],
+  ['Wastepaper Baskets', '2', '17.99', '35.98'],
+  ['Subtotal', 'Subtotal', 'Subtotal', '610.88'],
+  ['Tax', 'Tax', '7%', '42.76'],
+  ['Total', 'Total', 'Total', '653.64']])
 
-print(repr_table(*html2list(example2)))
+>>>print(repr_table(*html2list(example2)))
                     Invoice                     
 Item / Desc.        Qty.      @         Price 
 Paperclips (Box)    100       1.15      115.00
@@ -113,13 +125,20 @@ Total               Total     Total     653.64
 <table> <caption>Favorite and Least Favorite Things</caption> <tr> <th></th><th></th> <th>Bob</th> <th>Alice</th> </tr> <tr> <th rowspan='2'>Favorite</th> <th>Color</th> <td>Blue</td> <td>Purple</td> </tr> <tr> <th>Flavor</th> <td>Banana</td> <td>Chocolate</td> </tr> <tr> <th rowspan='2'>Least Favorite</th> <th>Color</th> <td>Yellow</td> <td>Pink</td> </tr> <tr> <th>Flavor</th> <td>Mint</td> <td>Walnut</td> </tr> </table>
 
 ```python
-from html2list import html2list, repr_table
-from examples import *
-print(html2list(example3))
+>>>from html2list import html2list, repr_table
+>>>from examples import *
+>>>from pprint import pprint
 
-Favorite and Least Favorite Things [['', '', 'Bob', 'Alice'], ['Favorite', 'Color', 'Blue', 'Purple'], ['Favorite', 'Flavor', 'Banana', 'Chocolate'], ['Least Favorite', 'Color', 'Yellow', 'Pink'], ['Least Favorite', 'Flavor', 'Mint', 'Walnut']]
+>>>pprint(html2list(example3))
 
-print(repr_table(*html2list(example3)))
+('Favorite and Least Favorite Things',
+ [['', '', 'Bob', 'Alice'],
+  ['Favorite', 'Color', 'Blue', 'Purple'],
+  ['Favorite', 'Flavor', 'Banana', 'Chocolate'],
+  ['Least Favorite', 'Color', 'Yellow', 'Pink'],
+  ['Least Favorite', 'Flavor', 'Mint', 'Walnut']])
+
+>>>print(repr_table(*html2list(example3)))
     Favorite and Least Favorite Things     
                         Bob     Alice    
 Favorite        Color   Blue    Purple   
