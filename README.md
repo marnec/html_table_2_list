@@ -1,7 +1,9 @@
 # HTML tables to python list
 Simple yet powerful function to cast an HTML table to a python list.
-Keyword is simplicity, in order to comply with it all styles and cell hierarchy (hedaings) are ignored.
-`rowspan`s and `colspan`s are mutated in repeated cells.
+Keyword is simplicity. In order to make it the simplest possible
+* all HTML styles and cell hierarchy (hedaings) are ignored;
+* `rowspan`s and `colspan`s are mutated in repeated cells;
+* `thead`, `tbody` and `tfoot` are merged in a unique element.
 
 ## Requirements
 Python 3+ (I didn't test it on Python2)
